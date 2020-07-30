@@ -1,9 +1,17 @@
 # required additions to path
+set -x -U GOPATH $HOME/gocode
 set PATH /Applications/Postgres.app/Contents/MacOS $PATH
 set PATH /usr/local/mysql/bin $PATH
-set LDFLAGS "$LDFLAGS -arch x86_64 -flat_namespace -undefined suppress -L/usr/local/Cellar/openssl/1.0.2o_2/lib/"
-set C_INCLUDE_PATH $C_INCLUDE_PATH /usr/local/Cellar/openssl/1.0.2n/include
+set LDFLAGS "$LDFLAGS -arch x86_64 -flat_namespace -undefined suppress -L/usr/local/opt/openssl/lib/"
+set C_INCLUDE_PATH $C_INCLUDE_PATH /usr/local/opt/openssl/include 
+set PATH $HOME/.rbenv/bin $PATH
+set PATH $HOME/.rbenv/shims $PATH
+set PATH $HOME/.npm-global/bin $PATH
+set PATH $GOPATH/bin $PATH
+set PATH $HOME/Library/Python/2.7/bin $PATH
+set PATH /usr/local/opt/qt@5.5/bin $PATH
 
+rbenv rehash >/dev/null ^&1
 
 # git helpers
 alias gs="git status"
@@ -15,8 +23,7 @@ alias gpom="git push origin master"
 
 #other helpers
 alias pingle="ping google.com"
-alias geths="geth --datadir=./datadir --nodiscover --rpc --rpcapi 'db,personal,eth,net,web3' --rpccorsdomain='*' --rpcaddr='localhost' --rpcport=8545 console"
-
+alias ls="lsd"
 
 # promp setup
 set fish_git_dirty_color red
@@ -48,6 +55,5 @@ function fish_prompt
   end
   
 end
-
 
 set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
