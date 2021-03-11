@@ -56,4 +56,7 @@ function fish_prompt
   
 end
 
-set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
+
+
+
+set -g fish_user_paths "/usr/local/opt/php@7.2/bin" $fish_user_paths
